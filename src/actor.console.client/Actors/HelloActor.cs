@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using actor.console.client.Messages;
 using Proto;
 
 namespace actor.console.client.Actors
@@ -10,8 +11,8 @@ namespace actor.console.client.Actors
         {
             Console.WriteLine("Hello Actor Called!");
 
-            if (context.Message is string msg){
-                Console.WriteLine($"Hello { msg }!");
+            if (context.Message is Hello msg){
+                Console.WriteLine($"Hello { msg.Who }!");
             }
             return Actor.Done;
         }
